@@ -1,3 +1,14 @@
+const MutableRelativeTypes = {
+  DAY: 1,
+  HOUR: 2,
+  MIN: 3,
+  WEEK: 4,
+  MONTH: 5,
+};
+
+export const RelativeType = Object.freeze(MutableRelativeTypes);
+
+
 /** Base parser **/
 export default class Parser {
 
