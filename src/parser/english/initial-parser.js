@@ -11,7 +11,8 @@ export default class InitialParser extends Parser {
     if (text.trim().length === 2 && text.trim().match(/^to/i)) {
       // if only 2 char text is there and that is 'to', do not go further,
       // consider it as today and tomorrow, and show suggestions accordingly
-      parsedInfo.other = {
+      parsedInfo.initialParser = {
+        type: 'other',
         value: 0,
       }
     } else {
@@ -20,7 +21,8 @@ export default class InitialParser extends Parser {
       if (m) {
         let number = Number(m[1]);
         if (number > 0) {
-          parsedInfo.number = {
+          parsedInfo.initialParser = {
+            type: 'number',
             value: number,
           }
         } else {
