@@ -8,6 +8,15 @@ const MutableRelativeTypes = {
 
 export const RelativeType = Object.freeze(MutableRelativeTypes);
 
+const MutableTimeOfDayTypes = {
+  MORNING: 1,
+  AFTERNOON: 2,
+  EVENING: 3,
+  NIGHT: 4,
+}
+
+export const TimeOfDayType = Object.freeze(MutableTimeOfDayTypes);
+
 
 /** Base parser **/
 export default class Parser {
