@@ -6,7 +6,7 @@ import { RelativeType } from '../../constants';
 // Thu, 24 May 2018 03:01:37 GMT
 Date.now = jest.fn(() => 1527130897000)
 
-test('Stitch dow info without time of day or time', () => {
+test('Stitch number relative time info without time of day or time', () => {
   const needle = new Needle(Config.getDefault());
 
   const parsedInfo = {
@@ -20,7 +20,7 @@ test('Stitch dow info without time of day or time', () => {
   expect(relic.unix()).toBe(1527303697);
 });
 
-test('Stitch dow info with time', () => {
+test('Stitch number relative time info with time', () => {
   const needle = new Needle(Config.getDefault());
 
   const parsedInfo = {
