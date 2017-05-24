@@ -9,17 +9,16 @@ export default class DateNeedle extends Needle {
       const secondsOfDay = super.extractTime(parsedInfo);
       if (secondsOfDay === -1) {
         const computedDateTime = dateParserValue.value.unix();
-        return dateParserValue.value.clone();
+        return dateParserValue.value;
       } else {
         const computedDateTime = dateParserValue.value.unix() + secondsOfDay;
-        const finalDT= moment();
+        const finalDT = moment.unix(computedDateTime);
         // check if current time is more than the specified date
-        const incrementYear = finalDT.unix() > computedDateTime;
-        finalDT.unix(computedDateTime);
+        const incrementYear = (Date.now() / 1000) > computedDateTime;
         if (incrementYear) {
-          finalDT.add(1, 'year');
+          finalDT.add(1, 'y');
         }
-        return finalDT.clone();
+        return finalDT;
       }
     } else {
       return super.stitch(parsedInfo);
