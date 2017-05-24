@@ -1,4 +1,5 @@
-import Parser, { RelativeType } from '../parser';
+import Parser from '../parser';
+import { RelativeType } from '../../constants'
 
 export default class NumberRelativeParser extends Parser {
 

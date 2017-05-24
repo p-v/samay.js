@@ -1,5 +1,5 @@
 import Parser from '../number-relative-parser.js';
-import { RelativeType } from '../../parser';
+import { RelativeType } from '../../../constants';
 import ParsedInfo from '../../parsed-info';
 
 Date.now = jest.fn(() => 1527130897000)

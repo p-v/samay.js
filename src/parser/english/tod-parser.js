@@ -1,4 +1,5 @@
-import Parser, { TimeOfDayType } from '../parser';
+import Parser from '../parser';
+import { TimeOfDayType } from '../../constants';
 
 export default class TODParser extends Parser {
 

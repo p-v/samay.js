@@ -1,6 +1,6 @@
 import Parser from '../tod-parser.js';
 import ParsedInfo from '../../parsed-info';
-import { TimeOfDayType } from '../../parser';
+import { TimeOfDayType } from '../../../constants';
 
 Date.now = jest.fn(() => 1527130897000)
 
