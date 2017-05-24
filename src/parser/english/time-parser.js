@@ -25,7 +25,6 @@ export default class TimeParser extends Parser {
     const updatedText = this.getUpdateText(text, parsedInfo);
     const m = this.regex.exec(updatedText);
     if (m) {
-      console.log(m);
       let hourOfDay = Number(m[1]);
       let mins = 0, minsStr = m[2], amPm = m[3];
       if (minsStr) {
