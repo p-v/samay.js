@@ -1,10 +1,6 @@
 /** Base parser **/
 export default class Parser {
 
-  constructor() {
-
-  }
-
   /**
    * Set next parser to be executed
    * after the current parser
@@ -12,6 +8,7 @@ export default class Parser {
    */
   setNextParser(parser) {
     this.nextParser = parser;
+    return parser;
   }
 
   /**

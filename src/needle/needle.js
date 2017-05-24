@@ -15,6 +15,7 @@ export default class Needle {
 
   setNextNeedle(needle) {
     this.nextNeedle = needle;
+    return needle;
   }
 
   /**
@@ -161,7 +162,7 @@ export default class Needle {
   
   stitch(parsedInfo) {
     if (this.nextNeedle) {
-      this.nextNeedle.stitch(parsedInfo);
+      return this.nextNeedle.stitch(parsedInfo);
     }
   }
 

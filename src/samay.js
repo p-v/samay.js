@@ -1,4 +1,6 @@
 import Config from './config';
+import Parser from './parser';
+import Needle from './needle';
 
 export default class Samay {
   
@@ -7,8 +9,9 @@ export default class Samay {
   }
 
   parse(text) {
-    this.config.
-
+    const parsedInfo = Parser.parse(text, this.config);
+    const result = Needle.stitch(parsedInfo, this.config);
+    return result;
   }
 
 }
