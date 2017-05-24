@@ -2,7 +2,7 @@ import Needle from './needle';
 import moment from 'moment';
 import { RelativeType } from '../constants'
 
-export default class DOWNeedle extends Needle {
+export default class NumberRelativeNeedle extends Needle {
 
   stitch(parsedInfo) {
     const numberRelativeParserValue = parsedInfo.numberRelativeParser;
