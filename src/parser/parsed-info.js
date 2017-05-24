@@ -1,5 +1,5 @@
 const ParsedInfo = {
-  dateParser: {},
-  longDateParser: {},
+  dateParser: null,
+  longDateParser: null,
 }
 export default ParsedInfo;
