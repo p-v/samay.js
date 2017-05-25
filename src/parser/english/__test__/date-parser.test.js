@@ -11,3 +11,11 @@ test('Parses 12 Jan', () => {
   expect({ value: value.unix(), startIndex, endIndex })
   .toEqual({ value: 1515695400, startIndex: 0, endIndex: 6 });
 });
+
+test('Parses 22 May', () => {
+  const dateParser = new DateParser();
+  dateParser.parse('22 May', ParsedInfo);
+  const { value, startIndex, endIndex } = ParsedInfo.dateParser;
+  expect({ value: value.unix(), startIndex, endIndex })
+  .toEqual({ value: 1526927400, startIndex: 0, endIndex: 6 });
+});

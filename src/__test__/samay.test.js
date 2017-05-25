@@ -22,3 +22,9 @@ test('Parses next friday at 8', () => {
   expect(result.unix()).toBe(1527820200);
 });
 
+test('Parses 22 May', () => {
+  const samay = new Samay();
+  const result = samay.parse('22 May');
+  expect(result.unix()).toBe(1526927400);
+});
+
