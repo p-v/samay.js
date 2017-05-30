@@ -2,7 +2,7 @@ import Config from './config';
 import Parser from './parser';
 import Needle from './needle';
 
-export default class Samay {
+class Samay {
   
   constructor(config) {
     this.config = config || Config.getDefault();
@@ -15,3 +15,5 @@ export default class Samay {
   }
 
 }
+
+module.exports = Samay;

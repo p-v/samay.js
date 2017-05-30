@@ -1,11 +1,13 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
+const module = {
   entry: './src/samay.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'samay.min.js'
+    filename: 'samay.min.js',
+    library: 'samay',
+    libraryTarget: 'commonjs2',
   },
   module: {
     loaders: [
@@ -19,3 +21,5 @@ module.exports = {
     ]
   },
 };
+
+export default module;
