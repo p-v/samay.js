@@ -15,3 +15,5 @@ export default class Samay {
   }
 
 }
+
+export { default as Config } from './config';

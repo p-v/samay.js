@@ -1,14 +1,6 @@
-export const Language =  {
-  en: {
-    parser: [
-
-    ],
-
-  },
-  hi: {
-
-  },
-}
+export const Language = {
+  en: 'english',
+};
 
 /** Config used to parse time **/
 export default class Config {
@@ -34,10 +26,6 @@ export default class Config {
 
   setHelpAutocomplete(helpAutocomplete) {
     this.helpAutocomplete = helpAutocomplete;
-  }
-
-  parser() {
-    return this.language.parser;
   }
 
 }
