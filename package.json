@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "jest",
-    "webpack": "webpack"
+    "build": "webpack"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
