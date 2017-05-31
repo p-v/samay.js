@@ -4,7 +4,7 @@ import webpack from 'webpack';
 const module = {
   entry: './src/samay.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'samay.min.js',
     library: 'samay',
     libraryTarget: 'commonjs2',

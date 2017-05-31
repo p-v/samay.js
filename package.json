@@ -1,7 +1,7 @@
 {
   "name": "samay",
   "version": "1.0.0",
-  "main": "src/samay.js",
+  "main": "./dist/samay.min.js",
   "license": "MIT",
   "babel": {
     "presets": [
