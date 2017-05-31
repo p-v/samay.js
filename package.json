@@ -1,7 +1,7 @@
 {
   "name": "samay",
   "version": "1.0.0",
-  "main": "src/samay.js",
+  "main": "./dist/samay.min.js",
   "license": "MIT",
   "babel": {
     "presets": [
@@ -9,14 +9,16 @@
     ]
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
-    "jest": "^20.0.3"
+    "jest": "^20.0.3",
+    "webpack": "^2.6.1"
   },
   "dependencies": {
     "moment": "^2.18.1"
