@@ -3,8 +3,8 @@ import { TimeOfDayType } from '../../constants';
 
 export default class TODParser extends Parser {
 
-  constructor() {
-    super();
+  constructor(config) {
+    super(config);
     this.regex = /\b(?:(morn(?:i(?:n(?:g)?)?)?)|(after(?=(?:\S+|$))(?:n(?:o(?:o(?:n)?)?)?)?)|(even(?:i(?:n(?:g)?)?)?)|(ni(?:g(?:h(?:t)?)?)?))\b/i;
   }
 

@@ -3,8 +3,8 @@ import { RelativeType } from '../../constants'
 
 export default class NumberRelativeParser extends Parser {
 
-  constructor() {
-    super();
+  constructor(config) {
+    super(config);
     this.regex = /\b(?:(?:(?:(?:after\s{1,2})?(\d\d?)\s{0,2})|next\s{1,2})(?:(month?)|(m(?:i(?:n(?:u(?:te?)?)?)?)?)|(we(?:ek?))|(d(?:ay?))|(hr|h(?:o(?:ur?)?)?))s?)\b/i;
   }
 

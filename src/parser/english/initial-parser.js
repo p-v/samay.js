@@ -2,13 +2,19 @@ import Parser from '../parser';
 
 export default class InitialParser extends Parser {
 
-  constructor() {
-    super();
-    this.regex = /^\s*(\d{1,2})\s*$/i;
+  constructor(config) {
+    super(config);
+    if (config.helpAutocomplete) {
+      this.skip = true;
+    } else {
+      this.regex = /^\s*(\d{1,2})\s*$/i;
+    }
   }
 
   parse(text, parsedInfo) {
-    if (text.trim().length === 2 && text.trim().match(/^to/i)) {
+    if (this.skip) {
+      super.parse(text, parsedInfo);
+    } else if (text.trim().length === 2 && text.trim().match(/^to/i)) {
       // if only 2 char text is there and that is 'to', do not go further,
       // consider it as today and tomorrow, and show suggestions accordingly
       parsedInfo.initialParser = {

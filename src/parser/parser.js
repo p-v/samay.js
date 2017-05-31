@@ -2,6 +2,13 @@
 export default class Parser {
 
   /**
+   * Create a new parser with the specified config
+   * @param config
+   */
+  constructor(config) {
+    this.config = config;
+  }
+  /**
    * Set next parser to be executed
    * after the current parser
    * @param parser

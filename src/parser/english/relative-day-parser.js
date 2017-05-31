@@ -2,8 +2,8 @@ import Parser from '../parser';
 
 export default class RelativeDayParser extends Parser {
 
-  constructor() {
-    super();
+  constructor(config) {
+    super(config);
     this.regex = /\b(?:(tod(?:a(?:y)?)?)|(tom(?:o(?:r(?:r(?:o(?:w)?)?)?)?)?)|(day after tomorrow)|((?:ton(?:i(?:g(?:(?:h)?t)?)?)?)|(?:ton(?:i(?:t(?:e)?)?)?)))\b/i;
   }
 

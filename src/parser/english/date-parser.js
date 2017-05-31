@@ -4,8 +4,8 @@ import Utils from '../../utils';
 
 export default class DateParser extends Parser {
 
-  constructor() {
-    super();
+  constructor(config) {
+    super(config);
     this.regex = /\b(?:(0?[1-9]|[12][0-9]|3[01])(?:st|nd|rd|th)?\s+\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)\b(?:(?:,?\s*)(?:(?:20)?(\d\d)(?!:)))?|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)\s+(0?[1-9]|[12][0-9]|3[01])(?:st|nd|rd|th)?\b(?:(?:,?\s*)(?:\b(?:20)?(\d\d)(?!:))\b)?)\b/i;
   }
 

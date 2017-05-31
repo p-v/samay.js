@@ -2,8 +2,8 @@ import Parser from '../parser';
 
 export default class TimeParser extends Parser {
 
-  constructor() {
-    super();
+  constructor(config) {
+    super(config);
     this.regex = /\b((?:2[0-3])|(?:1\d)|(?:0?\d))(?:(?::|\s?)((?:0?\d)|(?:[0-5][0-9]?)))?\s{0,2}([ap](?:\.?m\.?)?)?\b/i;
   }
 
