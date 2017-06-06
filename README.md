@@ -17,6 +17,6 @@ samay.parseText('tomorrow at 8am'); // { value: dateObject, hasTime: true, samay
 npm install samay.js
 ```
 
-# DEPRECATED
+# DEPRECATED function
 
 `samay#parse` has been deprecated in favour of `samay#parseText` which returns an object with some addition information.
