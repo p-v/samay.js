@@ -16,7 +16,7 @@ test('Stitch dow info without time of day or time', () => {
     },
   };
   const relic = needle.stitch(parsedInfo);
-  expect(relic.unix()).toBe(1527359400);
+  expect(relic.result.unix()).toBe(1527359400);
 });
 
 test('Stitch dow info without time of day or time and using next', () => {
@@ -29,7 +29,7 @@ test('Stitch dow info without time of day or time and using next', () => {
     },
   };
   const relic = needle.stitch(parsedInfo);
-  expect(relic.unix()).toBe(1527964200);
+  expect(relic.result.unix()).toBe(1527964200);
 });
 
 test('Stitch dow info without time of day but with time and using next', () => {
@@ -45,6 +45,6 @@ test('Stitch dow info without time of day but with time and using next', () => {
     },
   };
   const relic = needle.stitch(parsedInfo);
-  expect(relic.unix()).toBe(1528018200);
+  expect(relic.result.unix()).toBe(1528018200);
 });
 

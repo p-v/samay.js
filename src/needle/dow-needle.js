@@ -1,5 +1,6 @@
-import Needle from './needle';
 import moment from 'moment';
+import Needle from './needle';
+import { SamayType } from '../constants';
 
 const NEXT_WEEK_THRESHOLD = 4;
 
@@ -41,13 +42,16 @@ export default class DOWNeedle extends Needle {
       currentDT.add(daysToAdd, 'd');
 
       const secondsOfDay = super.extractTime(parsedInfo);
-      if (secondsOfDay > 0) {
+      if (secondsOfDay !== -1) {
         currentDT.add(secondsOfDay, 's');
       }
-      return currentDT;
-    } else {
-      return super.stitch(parsedInfo);
+      return {
+        result: currentDT,
+        samayType: SamayType.DAY_OF_WEEK,
+        hasTime: secondsOfDay !== -1,
+      };
     }
+    return super.stitch(parsedInfo);
   }
 
 }

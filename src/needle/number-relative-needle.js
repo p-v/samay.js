@@ -1,6 +1,6 @@
-import Needle from './needle';
 import moment from 'moment';
-import { RelativeType } from '../constants'
+import Needle from './needle';
+import { RelativeType, SamayType } from '../constants';
 
 export default class NumberRelativeNeedle extends Needle {
 
@@ -9,10 +9,8 @@ export default class NumberRelativeNeedle extends Needle {
     if (numberRelativeParserValue) {
       const finalDT = moment();
 
-      let isPartial = false;
       switch (numberRelativeParserValue.type) {
         case RelativeType.DAY: {
-          isPartial = true;
           finalDT.add(numberRelativeParserValue.value, 'd');
           break;
         }
@@ -25,32 +23,40 @@ export default class NumberRelativeNeedle extends Needle {
           break;
         }
         case RelativeType.WEEK: {
-          isPartial = true;
           finalDT.add(numberRelativeParserValue.value, 'w');
           break;
         }
         case RelativeType.MONTH: {
-          isPartial = true;
           finalDT.add(numberRelativeParserValue.value, 'M');
           break;
         }
+        default:
+          break;
       }
 
-      if (numberRelativeParserValue.type !== RelativeType.HOUR && numberRelativeParserValue.type !== RelativeType.MIN) {
-        const secondsOfDay = super.extractTime(parsedInfo);
+      let secondsOfDay = -1;
+      let hasTime = false;
+      if (numberRelativeParserValue.type !== RelativeType.HOUR &&
+          numberRelativeParserValue.type !== RelativeType.MIN) {
+        secondsOfDay = super.extractTime(parsedInfo);
         if (secondsOfDay !== -1) {
+          hasTime = true;
           finalDT.hours(0);
           finalDT.minutes(0);
           finalDT.seconds(0);
           finalDT.milliseconds(0);
           finalDT.add(secondsOfDay, 's');
         }
+      } else {
+        hasTime = true;
       }
-      return finalDT;
-    } else {
-      return super.stitch(parsedInfo);
+      return {
+        result: finalDT,
+        samayType: SamayType.NUMBER_RELATIVE,
+        hasTime,
+      };
     }
+    return super.stitch(parsedInfo);
   }
 
 }
-

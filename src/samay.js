@@ -14,7 +14,7 @@ class Samay {
   parse(text) {
     const parsedInfo = Parser.parse(text, this.config);
     const result = Needle.stitch(parsedInfo, this.config);
-    return result;
+    return result.result;
   }
 
   parseText(text) {

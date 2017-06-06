@@ -1,5 +1,6 @@
-import Needle from './needle';
 import moment from 'moment';
+import Needle from './needle';
+import { SamayType } from '../constants';
 
 export default class RelativeDayNeedle extends Needle {
 
@@ -16,19 +17,23 @@ export default class RelativeDayNeedle extends Needle {
         finalDT.add(secondsOfDay, 's');
       }
       switch (relativeDayParserValue.value) {
-          case 1:
-            finalDT.add(1, 'd');
-            break;
-          case 2:
-            finalDT.add(2, 'd');
-            break;
-          case 10:
-            finalDT.hours(22);
-            break;
-          default:
-            break;
+        case 1:
+          finalDT.add(1, 'd');
+          break;
+        case 2:
+          finalDT.add(2, 'd');
+          break;
+        case 10:
+          finalDT.hours(22);
+          break;
+        default:
+          break;
       }
-      return finalDT;
+      return {
+        result: finalDT,
+        samayType: SamayType.RELATIVE_DAY,
+        hasTime: secondsOfDay !== -1,
+      };
     }
     return super.stitch(parsedInfo);
   }

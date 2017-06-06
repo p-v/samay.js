@@ -21,7 +21,7 @@ const DAY_OF_WEEK = 5;
 const DATE = 6;
 const UNCERTAIN_DAY_OF_MONTH = 7;
 
-export class DataType {
+export class SamayType {
   
   static get RELATIVE_DAY() {
     return RELATIVE_DAY;

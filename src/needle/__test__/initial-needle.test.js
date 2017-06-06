@@ -15,7 +15,7 @@ test('Stitch initial parser info with number greater than todays date', () => {
     },
   };
   const relic = needle.stitch(parsedInfo);
-  expect(relic.unix()).toBe(1527445800);
+  expect(relic.result.unix()).toBe(1527445800);
 });
 
 test('Stitch initial parser info with number less than 24', () => {
@@ -28,5 +28,5 @@ test('Stitch initial parser info with number less than 24', () => {
     },
   };
   const relic = needle.stitch(parsedInfo);
-  expect(relic.unix()).toBe(1527143400);
+  expect(relic.result.unix()).toBe(1527143400);
 });

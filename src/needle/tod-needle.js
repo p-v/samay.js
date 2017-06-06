@@ -1,5 +1,6 @@
-import Needle from './needle';
 import moment from 'moment';
+import Needle from './needle';
+import { SamayType } from '../constants';
 
 export default class TODNeedle extends Needle {
 
@@ -15,11 +16,9 @@ export default class TODNeedle extends Needle {
       finalDT.seconds(0);
       finalDT.milliseconds(0);
       finalDT.add(secondsOfDay, 's');
-      return finalDT;
-    } else {
-      return super.stitch(parsedInfo);
+      return { result: finalDT, samayType: SamayType.TIME_OF_DAY, hasTime: true };
     }
+    return super.stitch(parsedInfo);
   }
 
 }
-
