@@ -7,7 +7,7 @@ Date.now = jest.fn(() => 1527130897000)
 test('Parses 28 June 12:30pm', () => {
   const samay = new Samay();
   const { value, samayType, hasTime } = samay.parseText('28 June 12:30pm');
-  expect(value.unix()).toBe(1530169200);
+  expect(value.getTime() / 1000).toBe(1530169200);
   expect(samayType).toBe(SamayType.DATE);
   expect(hasTime).toBe(true);
 });
@@ -15,7 +15,7 @@ test('Parses 28 June 12:30pm', () => {
 test('Parses tomorrow at 8', () => {
   const samay = new Samay();
   const { value, samayType, hasTime } = samay.parseText('tomorrow at 8');
-  expect(value.unix()).toBe(1527215400);
+  expect(value.getTime() / 1000).toBe(1527215400);
   expect(samayType).toBe(SamayType.RELATIVE_DAY);
   expect(hasTime).toBe(true);
 });
@@ -23,7 +23,7 @@ test('Parses tomorrow at 8', () => {
 test('Parses next friday at 8', () => {
   const samay = new Samay();
   const { value, samayType, hasTime } = samay.parseText('next friday at 8');
-  expect(value.unix()).toBe(1527820200);
+  expect(value.getTime() / 1000).toBe(1527820200);
   expect(samayType).toBe(SamayType.DAY_OF_WEEK);
   expect(hasTime).toBe(true);
 });
@@ -31,7 +31,7 @@ test('Parses next friday at 8', () => {
 test('Parses 22 May', () => {
   const samay = new Samay();
   const { value, samayType, hasTime } = samay.parseText('22 May');
-  expect(value.unix()).toBe(1558463400);
+  expect(value.getTime() / 1000).toBe(1558463400);
   expect(samayType).toBe(SamayType.DATE);
   expect(hasTime).toBe(false);
 });

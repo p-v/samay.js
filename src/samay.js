@@ -20,13 +20,13 @@ class Samay {
   parse(text) {
     const parsedInfo = Parser.parse(text, this.config);
     const result = Needle.stitch(parsedInfo, this.config);
-    return result.result;
+    return result.value;
   }
 
   parseText(text) {
     const parsedInfo = Parser.parse(text, this.config);
-    const result = Needle.stitch(parsedInfo, this.config);
-    return result;
+    const { value, hasTime, samayType }= Needle.stitch(parsedInfo, this.config);
+    return { value: value.toDate(), hasTime, samayType };
   }
 
 }
