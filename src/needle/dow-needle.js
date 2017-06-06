@@ -46,7 +46,7 @@ export default class DOWNeedle extends Needle {
         currentDT.add(secondsOfDay, 's');
       }
       return {
-        result: currentDT,
+        value: currentDT,
         samayType: SamayType.DAY_OF_WEEK,
         hasTime: secondsOfDay !== -1,
       };

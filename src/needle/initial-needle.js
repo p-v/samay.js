@@ -18,11 +18,11 @@ export default class InitialNeedle extends Needle {
 
         // first item
         if (currentHourOfDay < finalDT.hours()) {
-          return { result: finalDT, samayType: SamayType.TIME, hasTime: false };
+          return { value: finalDT, samayType: SamayType.TIME, hasTime: false };
         }
         // increment 12 hours
         finalDT.add(number <= 12 ? 12 : 24, 'h');
-        return { result: finalDT, samayType: SamayType.TIME, hasTime: false };
+        return { value: finalDT, samayType: SamayType.TIME, hasTime: false };
       }
       const currentDT = moment();
       currentDT.hours(0);
@@ -38,7 +38,7 @@ export default class InitialNeedle extends Needle {
         maxDay = currentDT.daysInMonth();
         currentDT.date(maxDay < number ? maxDay : number);
       }
-      return { result: currentDT, samayType: SamayType.UNCERTAIN_DAY_OF_MONTH, hasTime: false };
+      return { value: currentDT, samayType: SamayType.UNCERTAIN_DAY_OF_MONTH, hasTime: false };
     } else if (initialParserValue && initialParserValue.type === 'other') {
       // TODO later..
     }

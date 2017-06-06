@@ -15,5 +15,5 @@ test('Stitch time info', () => {
   };
 
   const relic = needle.stitch(parsedInfo);
-  expect(relic.result.unix()).toBe(1527154200);
+  expect(relic.value.unix()).toBe(1527154200);
 });

@@ -16,7 +16,7 @@ export default class TODNeedle extends Needle {
       finalDT.seconds(0);
       finalDT.milliseconds(0);
       finalDT.add(secondsOfDay, 's');
-      return { result: finalDT, samayType: SamayType.TIME_OF_DAY, hasTime: true };
+      return { value: finalDT, samayType: SamayType.TIME_OF_DAY, hasTime: true };
     }
     return super.stitch(parsedInfo);
   }

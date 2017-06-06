@@ -17,7 +17,7 @@ export default class TimeNeedle extends Needle {
       finalDT.seconds(0);
       finalDT.milliseconds(0);
       finalDT.add(secondsOfDay, 's');
-      return { result: finalDT, samayType: SamayType.TIME, hasTime: true };
+      return { value: finalDT, samayType: SamayType.TIME, hasTime: true };
     }
     return super.stitch(parsedInfo);
   }

@@ -17,7 +17,7 @@ test('Stitch number relative time info without time of day or time', () => {
   };
 
   const relic = needle.stitch(parsedInfo);
-  expect(relic.result.unix()).toBe(1527303697);
+  expect(relic.value.unix()).toBe(1527303697);
 });
 
 test('Stitch number relative time info with time', () => {
@@ -34,5 +34,5 @@ test('Stitch number relative time info with time', () => {
   };
 
   const relic = needle.stitch(parsedInfo);
-  expect(relic.result.unix()).toBe(1527323400);
+  expect(relic.value.unix()).toBe(1527323400);
 });

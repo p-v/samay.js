@@ -51,7 +51,7 @@ export default class NumberRelativeNeedle extends Needle {
         hasTime = true;
       }
       return {
-        result: finalDT,
+        value: finalDT,
         samayType: SamayType.NUMBER_RELATIVE,
         hasTime,
       };

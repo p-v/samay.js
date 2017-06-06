@@ -15,7 +15,7 @@ export default class DateNeedle extends Needle {
           dateParserValue.value.add(1, 'y');
         }
         return {
-          result: dateParserValue.value,
+          value: dateParserValue.value,
           samayType: SamayType.DATE,
           hasTime: false,
         };
@@ -27,7 +27,7 @@ export default class DateNeedle extends Needle {
       if (incrementYear) {
         finalDT.add(1, 'y');
       }
-      return { result: finalDT, samayType: SamayType.DATE, hasTime: true };
+      return { value: finalDT, samayType: SamayType.DATE, hasTime: true };
     }
     return super.stitch(parsedInfo);
   }

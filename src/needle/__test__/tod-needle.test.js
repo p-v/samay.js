@@ -16,7 +16,7 @@ test('Stitch time of day info without time', () => {
   };
 
   const relic = needle.stitch(parsedInfo);
-  expect(relic.result.unix()).toBe(1527161400);
+  expect(relic.value.unix()).toBe(1527161400);
 });
 
 test('Stitch time of day info with time', () => {
@@ -32,5 +32,5 @@ test('Stitch time of day info with time', () => {
   };
 
   const relic = needle.stitch(parsedInfo);
-  expect(relic.result.unix()).toBe(1527157800);
+  expect(relic.value.unix()).toBe(1527157800);
 });

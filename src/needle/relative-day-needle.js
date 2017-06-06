@@ -30,7 +30,7 @@ export default class RelativeDayNeedle extends Needle {
           break;
       }
       return {
-        result: finalDT,
+        value: finalDT,
         samayType: SamayType.RELATIVE_DAY,
         hasTime: secondsOfDay !== -1,
       };
