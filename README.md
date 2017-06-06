@@ -1,14 +1,14 @@
 samay.js
 ====
 
-Convert humanized strings to date.
+Convert future humanized date/time strings to date.
 
 ```
 import Samay from 'samay';
 
 const samay = new Samay();
 // Supposing today is 24th May, 2017
-samay.parse('tomorrow at 8am'); // 2017-05-24T08:00:00.000
+samay.parseText('tomorrow at 8am'); // { value: dateObject, hasTime: true, samayType: 1 }
 ```
 
 ## Install
@@ -17,4 +17,6 @@ samay.parse('tomorrow at 8am'); // 2017-05-24T08:00:00.000
 npm install samay.js
 ```
 
+# DEPRECATED
 
+`samay#parse` has been deprecated in favour of `samay#parseText` which returns an object with some addition information.
