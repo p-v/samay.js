@@ -15,7 +15,7 @@ class Samay {
   }
 
   /*
-   * @deprecated since version 1.1
+   * @deprecated since version 1.0.1
    */
   parse(text) {
     const parsedInfo = Parser.parse(text, this.config);
