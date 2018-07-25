@@ -36,3 +36,10 @@ test('Parses 22 May', () => {
   expect(hasTime).toBe(false);
 });
 
+test('Parsers 2 days later at 9pm', () => {
+  const samay = new Samay();
+  const { value, samayType, hasTime } = samay.parseText('2 days later at 9pm');
+  expect(value.getTime() / 1000).toBe(1527348600);
+  expect(samayType).toBe(SamayType.NUMBER_RELATIVE);
+  expect(hasTime).toBe(true);
+});
